@@ -1,0 +1,4 @@
+---
+- include:              '../tasks/lines_in_files.yml'
+- include:              '../tasks/restart_services.yml'
+  when:                 lines_in_files_result.changed

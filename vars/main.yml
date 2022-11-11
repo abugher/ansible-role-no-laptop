@@ -1,0 +1,16 @@
+---
+lines_in_files:
+  - dest:               '/etc/systemd/logind.conf'
+    regexp:             '^#* *[Login]'
+    line:               '[Login]'
+  - dest:               '/etc/systemd/logind.conf'
+    regexp:             '^#* *HandleLidSwitch='
+    line:               'HandleLidSwitch=ignore'
+  - dest:               '/etc/systemd/logind.conf'
+    regexp:             '^#* *HandleLidSwitchExternalPower='
+    line:               'HandleLidSwitchExternalPower=ignore'
+  - dest:               '/etc/systemd/logind.conf'
+    regexp:             '^#* *HandleLidSwitchDocked='
+    line:               'HandleLidSwitchDocked=ignore'
+restart_services:
+  - 'systemd-logind'
